@@ -29,6 +29,7 @@ vim.opt.wrap = true
 require("lazy").setup({
 	spec = {
 		-- add your plugins here
+		{'m4xshen/autoclose.nvim',opts = {}},
 		{
 			"williamboman/mason.nvim",
 			config = function()
@@ -45,6 +46,11 @@ require("lazy").setup({
 			end
 		},
 		{
+			'nvim-lualine/lualine.nvim',
+			dependencies = { 'nvim-tree/nvim-web-devicons' },
+			opts = {}
+		},
+		{
 			"neovim/nvim-lspconfig",
 			dependencies = { "williamboman/mason-lspconfig.nvim" },
 			config = function()
@@ -52,10 +58,10 @@ require("lazy").setup({
 				lspconfig.ts_ls.setup({
 					settings = {
 						typescript = { inlayHints = { includeInlayParameterNameHints = "all" } },
-						javascript = { inlayHints = { includeInlayParameterNameHints = "all" } }
+						javascript = { inlayHints = { includeInlayParameterNameHints = "all" } } 
 					}
 				})
-				lspconfig.eslint.setup({
+				lspconfig.eslint.setup({ 
 					setting = {
 						format = true
 					}
@@ -162,5 +168,5 @@ require("lazy").setup({
 		},
 	},
 	checker = { enabled = true },
-	install = {colorscheme = {"github_dark_default"}},
+	install = {colorscheme = {"tokyonight-night"}},
 })
